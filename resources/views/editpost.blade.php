@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Create Post') }}
+            {{ __('Edit Post') }}
         </h2>
     </x-slot>
 
@@ -19,9 +19,9 @@
                     @endif
                     <form method="post">
                     @csrf <!-- {{ csrf_field() }} -->
-                        <input style="width:100%" type="text" name="title" id="title" placeholder="Enter Title"/>
-                        <textarea style="width:100% ;margin-top:30px;height:300px;" type="text" name="body" id="body" placeholder="Write Post Here"></textarea>
-                        <button type="submit"style="background-color:green;border-radius:5px;padding:10px;color:white">Post Now</button>
+                        <input style="width:100%" type="text" name="title" id="title"  value="{{$post->title}}"/>
+                        <textarea style="width:100% ;margin-top:30px;height:300px;" type="text" name="body" id="body">{{$post->body}}</textarea>
+                        <button type="submit"style="background-color:green;border-radius:5px;padding:10px;color:white">update</button>
                     </form>
 
                 </div>

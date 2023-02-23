@@ -4,11 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\HomepageController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/',[HomepageController::class, 'show_post'])->name('home');
+
 
 
 
